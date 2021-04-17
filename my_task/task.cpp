@@ -1,6 +1,4 @@
-﻿// CMakeProject2.cpp: определяет точку входа для приложения.
-//
-
+﻿
 #include "task.h"
 
 namespace {
@@ -9,6 +7,7 @@ namespace {
 		size_t part_size = part_stop - part_start;
 		size_t first_rigt = part_start + first_part_2;
 		size_t first_left = 0;
+
 		if (first_rigt <= part_stop)
 		{
 			std::vector<int> left_save(first_part_2);
@@ -51,10 +50,11 @@ void testspace::Sort(std::vector<int>& v)
 {
 
 	size_t vectorSize= v.size();
-	int num_step = vectorSize / 2 + vectorSize % 2;
-	for (int j = 1; j <= num_step; j++) {
+	size_t num_step = vectorSize / 2 + vectorSize % 2;
 
-		for (int i = 0; i < vectorSize; i += (1 << j))
+	for (size_t j = 1; j <= num_step; j++) {
+
+		for (size_t i = 0; i < vectorSize; i += (1 << j))
 		{
 			if (i + (1 << j) - 1 < vectorSize)
 				PartSort(v, i, i + (1 << j) - 1, (1 << (j - 1)));

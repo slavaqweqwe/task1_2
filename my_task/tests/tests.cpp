@@ -1,6 +1,4 @@
-﻿// my_sin.cpp: определяет точку входа для приложения.
-//
-
+﻿
 #include <gtest/gtest.h>
 #include "task.h"
 
@@ -50,7 +48,33 @@ TEST(stack_lib_test, sort)
     testspace::Sort(v);
     ASSERT_EQ(v, v_sort);
 }
+TEST(stack_lib_test, all_neg1)
+{
 
+    vector<int> v = { -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1 };
+    vector<int> v_sort = v;
+    sort(v_sort.begin(), v_sort.end());
+    testspace::Sort(v);
+    ASSERT_EQ(v, v_sort);
+}
+TEST(stack_lib_test, all_0)
+{
+
+    vector<int> v = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+    vector<int> v_sort = v;
+    sort(v_sort.begin(), v_sort.end());
+    testspace::Sort(v);
+    ASSERT_EQ(v, v_sort);
+}
+TEST(stack_lib_test, all_1)
+{
+
+    vector<int> v = { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 };
+    vector<int> v_sort = v;
+    sort(v_sort.begin(), v_sort.end());
+    testspace::Sort(v);
+    ASSERT_EQ(v, v_sort);
+}
 int main(int argc, char* argv[])
 {
     ::testing::InitGoogleTest(&argc, argv);
